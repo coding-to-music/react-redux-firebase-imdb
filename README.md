@@ -93,7 +93,6 @@ heroku create react-redux-firebase-imdb
 ```java
 heroku config:set
 
-
 heroku config:set JWT_SECRET="secret"
 
 heroku config:set PUBLIC_URL="https://react-redux-firebase-imdb.herokuapp.com"
