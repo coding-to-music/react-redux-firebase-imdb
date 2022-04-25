@@ -1,11 +1,19 @@
 {
-  "name": "movie-app-next",
+  "name": "react-redux-firebase-imdb",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "git add . && git commit -m Build && git push && git push heroku && heroku logs --tail --remote heroku"
   },
+  "engines": {
+    "node": "16.x"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    ".next/cache"
+  ],
   "dependencies": {
     "@reduxjs/toolkit": "1.5.0",
     "@types/axios": "^0.14.0",
