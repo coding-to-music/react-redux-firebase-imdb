@@ -2,7 +2,7 @@
 
 # 🚀 Javascript full-stack 🚀
 
-### React / Next / MongoDB / eCharts / Storybook / GitHub API
+### React / Next / MongoDB / ReCharts / Highcharts / Firebase / IMDB API
 
 https://github.com/coding-to-music/react-redux-firebase-imdb
 

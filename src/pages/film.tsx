@@ -1,28 +1,28 @@
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Image from 'next/image';
-import { AiOutlineStar } from 'react-icons/ai';
-import styled from 'styled-components';
-import { auth, provider } from '../../firebase';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Image from "next/image";
+import { AiOutlineStar } from "react-icons/ai";
+import styled from "styled-components";
+import { auth, provider } from "../../firebase";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchFilmByName,
   selectFilms,
   statusFilms,
   fetchFilmById,
   selectActiveFilm,
-} from '../reducers/filmsSlice';
+} from "../reducers/filmsSlice";
 import {
   addToList,
   deleteFilmUserList,
   selectUserId,
   selectUserList,
   updateWatchStatus,
-} from '../reducers/userSlice';
-import Spinner from '../components/Spinner';
-import FilmCard from '../components/Card/FilmCard';
-import Button from '../components/Button';
+} from "../reducers/userSlice";
+import Spinner from "../components/Spinner";
+import FilmCard from "../components/Card/FilmCard";
+import Button from "../components/Button";
 
 const film = () => {
   const dispatch = useDispatch();
@@ -72,12 +72,12 @@ const film = () => {
       <>
         {userList.some((e) => e.filmId == activeFilm.id) ? (
           <Button
-            text='- Remove from list'
+            text="- Remove from list"
             clickHandler={() => removeToListHandler()}
           />
         ) : (
           <Button
-            text='+ Add to list'
+            text="+ Add to list"
             clickHandler={() => addToListHandler()}
           />
         )}
@@ -90,23 +90,23 @@ const film = () => {
     return (
       <>
         <h3>Log in to add this movie to your list</h3>
-        <Button text='Log in with Google' clickHandler={() => handleSignIn()} />
+        <Button text="Log in with Google" clickHandler={() => handleSignIn()} />
       </>
     );
   };
 
   const WatchListBody = () => {
     const test = userList.find((e) => e.filmId == activeFilm.id);
-    console.log('je test', test);
+    console.log("je test", test);
     if (test !== undefined) {
       if (test.watched == true) {
         return (
-          <Button text='Watched' clickHandler={() => updateWatch(false)} />
+          <Button text="Watched" clickHandler={() => updateWatch(false)} />
         );
       } else {
         return (
           <Button
-            text='+ Mark as watched'
+            text="+ Mark as watched"
             clickHandler={() => updateWatch(true)}
           />
         );
@@ -114,7 +114,7 @@ const film = () => {
     } else {
       return (
         <Button
-          text='+ Mark as watched'
+          text="+ Mark as watched"
           clickHandler={() => addToListHandler(true)}
         />
       );
@@ -122,17 +122,17 @@ const film = () => {
   };
 
   const body = () => {
-    if (status === 'fulfilled' && activeFilm.original_title) {
+    if (status === "fulfilled" && activeFilm.original_title) {
       return (
         <Container>
           <Header>
             <ImageContainer>
               <Image
-                className='poster'
+                className="poster"
                 src={`https://image.tmdb.org/t/p/w400/${activeFilm.poster_path}`}
-                alt='film poster'
-                layout='fill'
-                objectFit='cover'
+                alt="film poster"
+                layout="fill"
+                objectFit="cover"
                 quality={100}
               />
             </ImageContainer>
@@ -140,7 +140,7 @@ const film = () => {
               <Title>
                 {activeFilm.original_title}
                 <Rating>
-                  <AiOutlineStar className='icon' />
+                  <AiOutlineStar className="icon" />
                   <p>{activeFilm.vote_average}</p>
                 </Rating>
               </Title>
@@ -164,7 +164,7 @@ const film = () => {
               {activeFilm.filmRecommendations.results.map((film) => {
                 return (
                   <FilmCard
-                    size='medium'
+                    size="medium"
                     key={film.id}
                     text={false}
                     clickHandler={() => router.push(`/film?id=${film.id}`)}
@@ -188,16 +188,16 @@ const film = () => {
     <>
       <Head>
         <title>
-          Movio your movie companion |{' '}
+          Movio your movie companion |{" "}
           {activeFilm.original_title && activeFilm.original_title}
         </title>
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href='https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap"
+          rel="stylesheet"
         />
       </Head>
-      {status === 'pending' ? (
+      {status === "pending" ? (
         <SpinnerContainer>
           <Spinner />
         </SpinnerContainer>

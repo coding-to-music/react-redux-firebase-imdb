@@ -9,7 +9,7 @@
     "deploy": "git add . && git commit -m Build && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   },
   "cacheDirectories": [
     "node_modules",

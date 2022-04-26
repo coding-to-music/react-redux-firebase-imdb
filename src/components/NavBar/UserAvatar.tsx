@@ -1,9 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import Image from "next/image";
 
 const UserAvatar = ({ size, image }: { size: string; image: string }) => {
   return (
     <AvatarContainer size={size}>
-      <img src={image} alt='' />
+      <Image src={image} alt="" />
     </AvatarContainer>
   );
 };
@@ -12,13 +13,13 @@ export default UserAvatar;
 
 const AvatarContainer = styled.div<{ size: string }>`
   width: ${({ size }) =>
-    (size === 'small' && '50px') || (size === 'medium' && '80px')};
+    (size === "small" && "50px") || (size === "medium" && "80px")};
   height: ${({ size }) =>
-    (size === 'small' && '50px') || (size === 'medium' && '80px')};
+    (size === "small" && "50px") || (size === "medium" && "80px")};
   max-width: ${({ size }) =>
-    (size === 'small' && '50px') || (size === 'medium' && '80px')};
+    (size === "small" && "50px") || (size === "medium" && "80px")};
   max-height: ${({ size }) =>
-    (size === 'small' && '50px') || (size === 'medium' && '80px')};
+    (size === "small" && "50px") || (size === "medium" && "80px")};
   border-radius: 50%;
   background: ${({ theme }) => theme.colors.secondary};
   img {
