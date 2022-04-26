@@ -8,7 +8,7 @@ https://github.com/coding-to-music/react-redux-firebase-imdb
 
 https://react-redux-firebase-imdb.herokuapp.com
 
-https://react-redux-firebase-imdb.vercel.com
+https://react-redux-firebase-imdb.vercel.app
 
 by Adriengibaud https://github.com/adriengibaud
 

@@ -1,15 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { auth, provider } from '../../firebase';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { selectGenre } from '../reducers/genreSlice';
-import Head from 'next/head';
-import { changeTheme, selectTheme } from '../reducers/themeSlice';
-import styled from 'styled-components';
-import ToggleSwitch from '../components/ToggleSwitch';
-import Auth from '../components/Auth';
-import { selectUserName } from '../reducers/userSlice';
-import Button from '../components/Button';
+import { useDispatch, useSelector } from "react-redux";
+import { auth, provider } from "../../firebase";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { selectGenre } from "../reducers/genreSlice";
+import Head from "next/head";
+import { changeTheme, selectTheme } from "../reducers/themeSlice";
+import styled from "styled-components";
+import ToggleSwitch from "../components/ToggleSwitch";
+import Auth from "../components/Auth";
+import { selectUserName } from "../reducers/userSlice";
+import Button from "../components/Button";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -25,15 +25,15 @@ export default function Home() {
   const loggedInBody = () => {
     return (
       <Button
-        text='View my profile'
-        clickHandler={() => router.push('/userProfile')}
+        text="View my profile"
+        clickHandler={() => router.push("/userProfile")}
       />
     );
   };
 
   const notLoggedInBody = () => {
     return (
-      <Button text='Log in with Google' clickHandler={() => handleSignIn()} />
+      <Button text="Log in with Google" clickHandler={() => handleSignIn()} />
     );
   };
 
@@ -41,20 +41,20 @@ export default function Home() {
     <>
       <Head>
         <title>Movio your movie companion | Home</title>
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href='https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap"
+          rel="stylesheet"
         />
       </Head>
       <Title>Welcome on Movio</Title>
       <HomeBody>
         <ImageContainer>
           <Image
-            src='/popcorn.png'
-            alt='popcorn image'
-            layout='fill'
-            objectFit='cover'
+            src="/popcorn.png"
+            alt="popcorn image"
+            layout="fill"
+            objectFit="cover"
             quality={75}
           />
         </ImageContainer>
