@@ -20,7 +20,7 @@ https://github.com/adriengibaud/movie-app-next
 
 ```java
 NEXT_PUBLIC_TMDB_API_KEY
-MONGODB_URI
+NEXT_PUBLIC_MONGODB_URI
 
 FIREBASE_KEY=""
 FIREBASE_DOMAIN=""

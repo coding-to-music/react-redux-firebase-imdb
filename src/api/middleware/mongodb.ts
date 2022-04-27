@@ -5,7 +5,7 @@ const connectDB = (handler) => async (req, res) => {
     return handler(req, res);
   }
 
-  await mongoose.connect(process.env.MONGODB_URI, {
+  await mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URI, {
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
