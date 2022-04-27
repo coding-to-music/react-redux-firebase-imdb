@@ -24,7 +24,7 @@
     "highcharts": "^9.1.0",
     "highcharts-react-official": "^3.0.0",
     "mongoose": "^5.13.14",
-    "next": "latest",
+    "next": "^12.1.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
