@@ -46,7 +46,6 @@ const getByName = async (infos) => {
   const response = await axios.get(url);
   return response.data;
 };
-
 ```
 
 # Redux Toolkit example
