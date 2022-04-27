@@ -28,3 +28,6 @@ const AvatarContainer = styled.div<{ size: string }>`
     border-radius: 50%;
   }
 `;
+
+// layout="fill";
+// console.log(AvatarContainer);
